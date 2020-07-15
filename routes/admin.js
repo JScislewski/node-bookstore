@@ -6,16 +6,16 @@ const rootDir = require("../util/path");
 
 const router = express.Router();
 
-const products = [];
+const books = [];
 
-router.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+router.get("/add-book", (req, res, next) => {
+  res.sendFile(path.join(rootDir, "views", "add-book.html"));
 });
 
-router.post("/add-product", (req, res, next) => {
-  products.push({ title: req.body.title });
+router.post("/add-book", (req, res, next) => {
+  books.push({ title: req.body.title });
   res.redirect("/");
 });
 
 exports.routes = router;
-exports.products = products;
+exports.books = books;
